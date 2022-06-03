@@ -2,7 +2,10 @@
   border: thin solid red;
 }
 
-.app {
+body {
+  overflow-y: hidden;
+}
+body .app {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,18 +14,18 @@
   height: 100vh;
   justify-content: center;
 }
-.app #quote-box {
+body .app #quote-box {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 60vw;
 }
-.app #text {
+body .app #text {
   font-size: xx-large;
 }
-.app #author {
+body .app #author {
   font-size: xx-small;
 }
-.app #button-container {
+body .app #button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
