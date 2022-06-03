@@ -4,36 +4,36 @@ import { changeColors } from './helpers/help_functions';
 import axios from 'axios';
 
 const App = () => {
-
   const [state, setState] = useState({
-    quoteList: [],
     quote: "That's what",
     author: 'She',
   });
 
   useEffect(() => {
-
     const options = {
       method: 'GET',
-      url: 'https://theysaidso.p.rapidapi.com/quote/random',
-      params: {language: 'en'},
+      url: 'https://api.api-ninjas.com/v1/quotes',
+      params: { language: 'en' },
       headers: {
-        'X-RapidAPI-Host': 'theysaidso.p.rapidapi.com',
-        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY
-      }
+        'X-Api-Key': process.env.REACT_APP_API_KEY
+      },
     };
-    
-    axios.request(options).then(response => {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
+
+    axios
+      .request(options)
+      .then((response) => 
+      setState(prev => ({
+        ...prev, 
+        quote: response.data[0].quote,
+        author: response.data[0].author
+      })))
+      .catch((error) => console.error(error));
   }, []);
 
   const getNewQuote = () => {
-    console.log('NEW QUOTE BUTTON') 
+    console.log('NEW QUOTE BUTTON');
     changeColors();
-  }
+  };
 
   return (
     <div className='app'>
@@ -50,10 +50,9 @@ const App = () => {
           <a id='tweet-quote' href='https://twitter.com/intent/tweet'>
             <i className='fa-brands fa-twitter'></i>
           </a>
-          <button 
-          id='new-quote'
-          onClick={() => getNewQuote()}
-          >New Quote</button>
+          <button id='new-quote' onClick={() => getNewQuote()}>
+            New Quote
+          </button>
         </div>
       </div>
     </div>
