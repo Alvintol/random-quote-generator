@@ -1,1 +1,26 @@
+@import './mixins';
 
+* {
+  border: thin solid red;
+}
+.app {
+  @include flexColumn;
+  @include center;
+  height: 100vh;
+  justify-content: center;
+
+  #quote-box {
+    @include flexColumn;
+    width: 80vw;
+  }
+  #text {
+    font-size: xx-large;
+  }
+  #author {
+    font-size: xx-small;
+  }
+  #button-container{
+    @include flexRow;
+    justify-content: space-between;
+  }
+}
