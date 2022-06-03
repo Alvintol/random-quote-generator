@@ -19,6 +19,6 @@ $mute: rgba(189, 189, 189, 0.762);
 
 @mixin spacedChildren {
   & > * {
-    margin: 2%;
+    margin: 2% 6% 2% 5%;
   }
 }

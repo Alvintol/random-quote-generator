@@ -1,7 +1,3 @@
-* {
-  border: thin solid red;
-}
-
 body {
   overflow-y: hidden;
 }
@@ -17,16 +13,37 @@ body .app {
 body .app #quote-box {
   display: flex;
   flex-direction: column;
+  background-color: rgba(43, 42, 42, 0.872);
   width: 60vw;
+  border-radius: 15px;
 }
 body .app #text {
   font-size: xx-large;
 }
+body .app #text > * {
+  margin: 2% 6% 2% 5%;
+}
+body .app #text p {
+  padding-top: 2%;
+}
 body .app #author {
-  font-size: xx-small;
+  display: flex;
+  flex-direction: row;
+  font-size: medium;
+  justify-content: end;
+}
+body .app #author > * {
+  margin: 2% 6% 2% 5%;
 }
 body .app #button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 2%;
+}
+body .app #button-container > * {
+  margin: 2% 6% 2% 5%;
+}
+body .app #button-container > * {
+  border-radius: 5px;
 }

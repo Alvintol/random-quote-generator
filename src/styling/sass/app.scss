@@ -1,8 +1,5 @@
 @import './mixins';
 
-* {
-  border: thin solid red;
-}
 body {
   overflow-y: hidden;
   .app {
@@ -13,17 +10,35 @@ body {
 
     #quote-box {
       @include flexColumn;
+      background-color: $dark;
       width: 60vw;
+      border-radius: 15px;
     }
     #text {
+      @include spacedChildren;
       font-size: xx-large;
+
+      p {
+        padding-top: 2%;
+      }
     }
     #author {
-      font-size: xx-small;
+      @include flexRow;
+      @include spacedChildren;
+      font-size: medium;
+      justify-content: end;
+
     }
     #button-container {
       @include flexRow;
+      @include spacedChildren;
       justify-content: space-between;
+      padding-bottom: 2%;
+
+      & > * {
+      border-radius: 5px;
+        // color: aliceblue;
+      }
     }
   }
 }
