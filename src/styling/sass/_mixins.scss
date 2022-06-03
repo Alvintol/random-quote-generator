@@ -1,0 +1,24 @@
+$dark: rgba(43, 42, 42, 0.872);
+$mute: rgba(189, 189, 189, 0.762);
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@mixin spacedChildren {
+  & > * {
+    margin: 2%;
+  }
+}
