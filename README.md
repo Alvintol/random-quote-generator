@@ -2,7 +2,7 @@
 
 React based quote generator
 
-## Available Scripts
+## Starting the project
 
 In the project directory, you can run:
 
