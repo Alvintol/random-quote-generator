@@ -1,5 +1,5 @@
 import './styling/sass/app.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { changeColors } from './helpers/help_functions';
 import axios from 'axios';
 
@@ -9,6 +9,14 @@ const App = () => {
     author: 'She',
     color: '#16a085',
     visible: true,
+    options: {
+      method: 'GET',
+      url: 'https://api.api-ninjas.com/v1/quotes',
+      params: { language: 'en' },
+      headers: {
+        'X-Api-Key': process.env.REACT_APP_API_KEY,
+      },
+    },
   });
 
   const color = {
@@ -16,17 +24,8 @@ const App = () => {
     color: state.color,
   };
 
-  const options = {
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/quotes',
-    params: { language: 'en' },
-    headers: {
-      'X-Api-Key': process.env.REACT_APP_API_KEY,
-    },
-  };
-
   const getData = async () => {
-    const response = await axios.request(options);
+    const response = await axios.request(state.options);
     setState((prev) => ({
       ...prev,
       quote: response.data[0].quote,
