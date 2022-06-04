@@ -2,7 +2,7 @@
 
 React based quote generator
 
-![Video of app usage](https://github.com/Alvintol/random-quote-generator/blob/master/public/Screen%20Recording%202022-06-03%20at%2021.54.28.mov)
+![Video of app demo](https://user-images.githubusercontent.com/96437758/171982449-3f10f439-a23d-48ef-a450-eb616a15ce78.mov)
 
 # Setting up API Key 
 
