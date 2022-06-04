@@ -13,6 +13,9 @@ export const changeColors = () => {
     '#77B1A9',
     '#73A857'
   ];
-
   return colors[Math.floor(Math.random() * 12)]
 };
+
+export const fadeOut = () => {
+  
+}

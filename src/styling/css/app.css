@@ -21,22 +21,48 @@ body .app #quote-box {
   width: 60vw;
   border-radius: 15px;
 }
-body .app #text {
+body .app #quote-box .fadeOut {
+  animation: fadeOutAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .app #quote-box .fadeIn {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body .app #quote-box #text {
   font-size: xx-large;
 }
-body .app #text > * {
+body .app #quote-box #text > * {
   margin: 2% 6% 2% 5%;
 }
-body .app #text p {
+body .app #quote-box #text p {
   padding-top: 2%;
 }
-body .app #author {
+body .app #quote-box #author {
   display: flex;
   flex-direction: row;
   font-size: medium;
   justify-content: end;
 }
-body .app #author > * {
+body .app #quote-box #author > * {
   margin: 2% 6% 2% 5%;
 }
 body .app #button-container {

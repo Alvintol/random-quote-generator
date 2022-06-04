@@ -5,55 +5,57 @@ import axios from 'axios';
 
 const App = () => {
   const [state, setState] = useState({
-    quote: "That's what",
+    quote: "That's what?",
     author: 'She',
     color: '#16a085',
+    visible: true,
   });
 
   const color = {
     backgroundColor: state.color,
-    color: state.color
+    color: state.color,
   };
 
-  // useEffect(() => {
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'https://api.api-ninjas.com/v1/quotes',
-  //     params: { language: 'en' },
-  //     headers: {
-  //       'X-Api-Key': process.env.REACT_APP_API_KEY,
-  //     },
-  //   };
+  const options = {
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/quotes',
+    params: { language: 'en' },
+    headers: {
+      'X-Api-Key': process.env.REACT_APP_API_KEY,
+    },
+  };
 
-  //   axios
-  //     .request(options)
-  //     .then((response) =>
-  //       setState((prev) => ({
-  //         ...prev,
-  //         quote: response.data[0].quote,
-  //         author: response.data[0].author,
-  //       }))
-  //     )
-  //     .catch((error) => console.error(error));
-  // }, []);
-
-  const getNewQuote = () => {
-    console.log('NEW QUOTE BUTTON');
+  const getData = async () => {
+    const response = await axios.request(options);
     setState((prev) => ({
       ...prev,
-      color: changeColors(),
+      quote: response.data[0].quote,
+      author: response.data[0].author,
     }));
   };
+
+  const getNewQuote = () =>
+    getData().then(() =>
+      setState((prev) => ({
+        ...prev,
+        color: changeColors(),
+        visible: true,
+      }))
+    );
 
   return (
     <div className='app' style={color}>
       <div id='quote-box'>
-        <div id='box-top' >
+        <div id='box-top'>
           <div id='text'>
-            <p>" {state.quote} "</p>
+            <p className={state.visible ? 'fadeIn' : 'fadeOut'}>
+              " {state.quote} "
+            </p>
           </div>
           <div id='author'>
-            <p>- {state.author}</p>
+            <p className={state.visible ? 'fadeIn' : 'fadeOut'}>
+              - {state.author}
+            </p>
           </div>
         </div>
         <div id='button-container'>

@@ -18,22 +18,53 @@ body {
       background-color: $dark;
       width: 60vw;
       border-radius: 15px;
-    }
 
-    #text {
-      @include spacedChildren;
-      font-size: xx-large;
-
-      p {
-        padding-top: 2%;
+      .fadeOut {
+        animation: fadeOutAnimation ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
       }
-    }
 
-    #author {
-      @include flexRow;
-      @include spacedChildren;
-      font-size: medium;
-      justify-content: end;
+      @keyframes fadeOutAnimation {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      
+      }
+
+      .fadeIn {
+        animation: fadeInAnimation ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #text {
+        @include spacedChildren;
+        font-size: xx-large;
+
+        p {
+          padding-top: 2%;
+        }
+      }
+
+      #author {
+        @include flexRow;
+        @include spacedChildren;
+        font-size: medium;
+        justify-content: end;
+      }
     }
 
     #button-container {
