@@ -16,6 +16,3 @@ export const changeColors = () => {
   return colors[Math.floor(Math.random() * 12)]
 };
 
-export const fadeOut = () => {
-  
-}
