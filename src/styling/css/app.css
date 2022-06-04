@@ -2,6 +2,7 @@ body {
   overflow: hidden;
 }
 body .app {
+  transition: ease 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +23,7 @@ body .app #quote-box {
   border-radius: 15px;
 }
 body .app #quote-box .fadeOut {
-  animation: fadeOutAnimation ease 2s;
+  animation: fadeOutAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -35,7 +36,7 @@ body .app #quote-box .fadeOut {
   }
 }
 body .app #quote-box .fadeIn {
-  animation: fadeInAnimation ease 2s;
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

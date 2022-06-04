@@ -4,6 +4,7 @@ body {
   overflow: hidden;
 
   .app {
+    transition: ease 0.5s;
     @include flexColumn;
     @include center;
     height: 100vh;
@@ -20,7 +21,7 @@ body {
       border-radius: 15px;
 
       .fadeOut {
-        animation: fadeOutAnimation ease 2s;
+        animation: fadeOutAnimation ease 0.5s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
       }
@@ -36,7 +37,7 @@ body {
       }
 
       .fadeIn {
-        animation: fadeInAnimation ease 2s;
+        animation: fadeInAnimation ease 0.5s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
       }

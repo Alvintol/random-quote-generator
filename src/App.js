@@ -34,14 +34,21 @@ const App = () => {
     }));
   };
 
-  const getNewQuote = () =>
-    getData().then(() =>
-      setState((prev) => ({
-        ...prev,
-        color: changeColors(),
-        visible: true,
-      }))
-    );
+  const getNewQuote = () => {
+    setState((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+    setTimeout(() => {
+      getData().then(() =>
+        setState((prev) => ({
+          ...prev,
+          color: changeColors(),
+          visible: true,
+        }))
+      );
+    }, 500);
+  };
 
   return (
     <div className='app' style={color}>
