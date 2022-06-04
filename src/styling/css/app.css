@@ -14,13 +14,19 @@ body .app {
   top: 0;
   left: 0;
   justify-content: center;
+  text-shadow: 1px 1px black;
 }
 body .app #quote-box {
   display: flex;
   flex-direction: column;
+  border-width: 2px;
+  border-style: outset;
+  border-color: rgba(189, 189, 189, 0.762);
+  border-image: initial;
   background-color: rgba(43, 42, 42, 0.872);
   width: 60vw;
   border-radius: 15px;
+  box-shadow: 1px 1px 1px 1px rgba(189, 189, 189, 0.762);
 }
 body .app #quote-box .fadeOut {
   animation: fadeOutAnimation ease 0.5s;
@@ -76,5 +82,19 @@ body .app #button-container > * {
   margin: 2% 6% 2% 5%;
 }
 body .app #button-container > * {
+  text-decoration: none;
   border-radius: 5px;
+}
+body .app #button-container #tweet-quote {
+  color: aliceblue;
+}
+body .app #button-container #tweet-quote i {
+  padding: 5px;
+  border-radius: 5px;
+  border: thin solid rgba(189, 189, 189, 0.762);
+}
+body .app #button-container #new-quote {
+  color: rgba(247, 247, 247, 0.906) !important;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
 }

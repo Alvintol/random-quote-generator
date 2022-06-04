@@ -56,7 +56,7 @@ const App = () => {
         <div id='box-top'>
           <div id='text'>
             <p className={state.visible ? 'fadeIn' : 'fadeOut'}>
-              " {state.quote} "
+              "{state.quote}"
             </p>
           </div>
           <div id='author'>
@@ -71,6 +71,7 @@ const App = () => {
           </a>
           <button
             id='new-quote'
+            style={color}
             onClick={(e) => {
               e.preventDefault();
               getNewQuote();
