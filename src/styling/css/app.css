@@ -1,5 +1,5 @@
 body {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 body .app {
   display: flex;
@@ -8,6 +8,10 @@ body .app {
   align-items: center;
   text-align: center;
   height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
   justify-content: center;
 }
 body .app #quote-box {

@@ -7,38 +7,48 @@ const App = () => {
   const [state, setState] = useState({
     quote: "That's what",
     author: 'She',
+    color: '#16a085',
   });
 
-  useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://api.api-ninjas.com/v1/quotes',
-      params: { language: 'en' },
-      headers: {
-        'X-Api-Key': process.env.REACT_APP_API_KEY
-      },
-    };
+  const color = {
+    backgroundColor: state.color,
+    color: state.color
+  };
 
-    axios
-      .request(options)
-      .then((response) => 
-      setState(prev => ({
-        ...prev, 
-        quote: response.data[0].quote,
-        author: response.data[0].author
-      })))
-      .catch((error) => console.error(error));
-  }, []);
+  // useEffect(() => {
+  //   const options = {
+  //     method: 'GET',
+  //     url: 'https://api.api-ninjas.com/v1/quotes',
+  //     params: { language: 'en' },
+  //     headers: {
+  //       'X-Api-Key': process.env.REACT_APP_API_KEY,
+  //     },
+  //   };
+
+  //   axios
+  //     .request(options)
+  //     .then((response) =>
+  //       setState((prev) => ({
+  //         ...prev,
+  //         quote: response.data[0].quote,
+  //         author: response.data[0].author,
+  //       }))
+  //     )
+  //     .catch((error) => console.error(error));
+  // }, []);
 
   const getNewQuote = () => {
     console.log('NEW QUOTE BUTTON');
-    changeColors();
+    setState((prev) => ({
+      ...prev,
+      color: changeColors(),
+    }));
   };
 
   return (
-    <div className='app'>
+    <div className='app' style={color}>
       <div id='quote-box'>
-        <div id='box-top'>
+        <div id='box-top' >
           <div id='text'>
             <p>" {state.quote} "</p>
           </div>
@@ -50,7 +60,13 @@ const App = () => {
           <a id='tweet-quote' href='https://twitter.com/intent/tweet'>
             <i className='fa-brands fa-twitter'></i>
           </a>
-          <button id='new-quote' onClick={() => getNewQuote()}>
+          <button
+            id='new-quote'
+            onClick={(e) => {
+              e.preventDefault();
+              getNewQuote();
+            }}
+          >
             New Quote
           </button>
         </div>
