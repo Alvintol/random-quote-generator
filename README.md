@@ -2,6 +2,8 @@
 
 React based quote generator
 
+![Video of app usage]()
+
 # Setting up API Key 
 
 In order to use the API, you need to sign up at `https://api-ninjas.com/`. It does not require a credit card. 
